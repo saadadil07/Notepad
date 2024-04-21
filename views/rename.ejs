@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title> Notepad </title>
+</head>
+<body>
+    <a id="home" class="underline" href="/"> Back to home </a>    
+    <form action="/edited" method="post">
+        <input type="text" placeholder="old name" name="old" value='<%=old%>'><br>
+        <input type="text" placeholder="new name" name="new"> <br>
+        <input class="bg-[white] text-[center] text-[black] rounded px-[10px] cursor-pointer" type="submit" value="Rename">
+    </form>  
+</body>
+</html>

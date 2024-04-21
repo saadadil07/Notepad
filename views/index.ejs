@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title> Notepad </title>
+</head>
+<body>
+        
+    <form action="/create" method="post">
+        <label for="title"> Title : </label> <input type="text" name="title"> <br>
+        <label for="description"> Description : </label> <input type="text" name="description"> <br>
+        <input class="bg-[white] text-[black] rounded px-[10px] cursor-pointer" type="submit" value="Add Task">
+    </form>
+
+        <div class="hidden">
+            <h1> title </h1>
+            <p> description </p>
+        </div>
+
+    <div class="flex gap-[1vw] w-[fit-content]" id="magic">
+        <% if(data.length>0){ %>
+            <% data.forEach(e=>{ %>
+              <div class=" border-2 p-[10px] text-center">
+                <h2> <%= e %> </h2>
+                <a class="text-[green] underline" href="/rename/<%=e%>"> rename </a> <br>
+                <a class="text-[red] underline" href="/delete/<%=e%>"> delete </a> <br>
+                <a class="text-[blue] underline" href="/details/<%=e%>"> read more </a> <br>
+              </div>
+            <% }) %>
+        <% } else{ %>
+             <h2> no tasks yet </h2>
+            <% } %>
+    </div>
+    
+</body>
+</html>
